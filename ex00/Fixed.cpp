@@ -6,7 +6,7 @@
 /*   By: svogrig <svogrig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 16:41:33 by svogrig           #+#    #+#             */
-/*   Updated: 2025/02/21 01:32:40 by svogrig          ###   ########.fr       */
+/*   Updated: 2025/02/21 01:41:16 by svogrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,12 +34,6 @@ Fixed& Fixed::operator=(const Fixed& other)
 Fixed::~Fixed(void)
 {
 	std::cout << BLUE "Destructor called" RESET << std::endl;
-}
-
-int Fixed::getPrecision(void) const
-{
-	std::cout << RED "getRawBits member functio called" RESET << std::endl;
-	return (this->_precisionInBit);
 }
 
 int Fixed::getRawBits(void) const

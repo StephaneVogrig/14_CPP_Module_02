@@ -6,7 +6,7 @@
 /*   By: svogrig <svogrig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 16:41:46 by svogrig           #+#    #+#             */
-/*   Updated: 2025/02/21 01:26:29 by svogrig          ###   ########.fr       */
+/*   Updated: 2025/02/21 01:41:09 by svogrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,16 +27,17 @@
 class Fixed
 {
 	public:
+	
 		Fixed(void);
 		Fixed(const Fixed& toCopy);
 		Fixed& operator=(const Fixed& newValue);
 		~Fixed(void);
 
-		int		getPrecision(void) const;
 		int		getRawBits(void) const;
 		void	setRawBits(int const raw);
 
 	private:
+
 		int					_value;
 		static const int	_precisionInBit = 8;
 
