@@ -6,7 +6,7 @@
 /*   By: svogrig <svogrig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 16:41:46 by svogrig           #+#    #+#             */
-/*   Updated: 2025/02/21 02:10:22 by svogrig          ###   ########.fr       */
+/*   Updated: 2025/02/21 14:06:24 by svogrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define FIXED_HPP
 
 #include <iostream>
+#include <cmath>
 
 # define RED "\033[31m"
 # define GREEN "\033[32m"
@@ -29,14 +30,14 @@ class Fixed
 	public:
 	
 		Fixed(void);
-		Fixed(const Fixed& toCopy);
-		Fixed(const int toCopy);
-		Fixed(const float toCopy);
-		Fixed& operator=(const Fixed& newValue);
+		Fixed(Fixed const & toCopy);
+		Fixed(int const intValue);
+		Fixed(float const floatValue);
+		Fixed& operator=(Fixed const & toAssign);
 		~Fixed(void);
 
 		int		getRawBits(void) const;
-		void	setRawBits(int const raw);
+		void	setRawBits(int const intValue);
 		
 		float	toFloat(void) const;
 		int		toInt(void) const;
@@ -44,8 +45,10 @@ class Fixed
 	private:
 
 		int					_value;
-		static const int	_precisionInBit = 8;
+		static int const	_precisionInBit = 8;
 
 };
+
+std::ostream& operator<<(std::ostream& os, const Fixed& obj);
 
 #endif

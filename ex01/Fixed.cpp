@@ -6,7 +6,7 @@
 /*   By: svogrig <svogrig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 16:41:33 by svogrig           #+#    #+#             */
-/*   Updated: 2025/02/21 02:21:44 by svogrig          ###   ########.fr       */
+/*   Updated: 2025/02/21 14:03:56 by svogrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,34 +19,43 @@ Fixed::Fixed(void) : _value(0)
 	std::cout << CYAN "Default constructor called" RESET << std::endl;
 }
 
-Fixed::Fixed(const Fixed& toCopy)
+Fixed::Fixed(Fixed const & toCopy)
 {
 	std::cout << CYAN "Copy constructor called" RESET << std::endl;
 	*this = toCopy;
 }
 
-Fixed::Fixed(const int toCopy)
+Fixed::Fixed(int const intValue)
 {
 	std::cout << CYAN "Int constructor called" RESET << std::endl;
-	this->_value = toCopy << this->_precisionInBit;
-	// this->setRawBits(toCopy << _precisionInBit);
+	this->_value = intValue << _precisionInBit;
 }
 
-Fixed::Fixed(const float toCopy)
+Fixed::Fixed(float const floatValue)
 {
 	std::cout << CYAN "Float constructor called" RESET << std::endl;
-	*this = toCopy;
+	this->_value = (int)roundf(floatValue * (1 << _precisionInBit));
 }
+
+
 
 /* operator ------------------------------------------------------------------*/
 
-Fixed& Fixed::operator=(const Fixed& toCopy)
+Fixed& Fixed::operator=(Fixed const & toAssign)
 {
 	std::cout << PURPLE "Copy assignment operator called" RESET << std::endl;
-	if (this != &toCopy)
-		this->_value = toCopy.getRawBits();
+	if (this != &toAssign)
+		this->_value = toAssign._value;
 	return (*this);
 }
+
+std::ostream& operator<<(std::ostream & os, Fixed const & obj)
+{
+	os << obj.toFloat();
+	return (os);
+}
+
+
 
 /* destructor ----------------------------------------------------------------*/
 
@@ -54,6 +63,8 @@ Fixed::~Fixed(void)
 {
 	std::cout << BLUE "Destructor called" RESET << std::endl;
 }
+
+
 
 /* getter setter -------------------------------------------------------------*/
 
@@ -63,24 +74,22 @@ int Fixed::getRawBits(void) const
 	return (this->_value);
 }
 
-void Fixed::setRawBits(int const raw)
+void Fixed::setRawBits(int const intValue)
 {
 	std::cout << GREY "setRawBits member functio called" RESET << std::endl;
-	this->_value = raw;
+	this->_value = intValue;
 }
+
+
 
 /* convert -------------------------------------------------------------------*/
 
 float Fixed::toFloat(void) const
 {
-	float result = this->_value / 256;
-
-	return (result);
+	return ((float)this->_value / (1 << _precisionInBit));
 }
+
 int Fixed::toInt(void) const
 {
-	
-	float result = this->_value >> 8;
-
-	return (result);
+	return (this->_value >> _precisionInBit);
 }
