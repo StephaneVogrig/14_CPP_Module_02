@@ -6,7 +6,7 @@
 /*   By: svogrig <svogrig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 16:41:33 by svogrig           #+#    #+#             */
-/*   Updated: 2025/02/21 13:50:29 by svogrig          ###   ########.fr       */
+/*   Updated: 2025/02/21 14:06:48 by svogrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,8 @@ int Fixed::getRawBits(void) const
 	return (this->_value);
 }
 
-void Fixed::setRawBits(int const raw)
+void Fixed::setRawBits(int const intValue)
 {
 	std::cout << GREY "setRawBits member function called" RESET << std::endl;
-	this->_value = raw;
+	this->_value = intValue;
 }
