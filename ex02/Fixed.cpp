@@ -6,7 +6,7 @@
 /*   By: svogrig <svogrig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 16:41:33 by svogrig           #+#    #+#             */
-/*   Updated: 2025/02/22 20:39:21 by svogrig          ###   ########.fr       */
+/*   Updated: 2025/02/23 00:50:55 by svogrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ Fixed::Fixed(float const floatValue)
 
 /* operator ------------------------------------------------------------------*/
 
-Fixed& Fixed::operator=(Fixed const & toAssign)
+Fixed & Fixed::operator = (Fixed const & toAssign)
 {
 	std::cout << PURPLE "Copy assignment operator called" RESET << std::endl;
 	if (this != &toAssign)
@@ -49,62 +49,62 @@ Fixed& Fixed::operator=(Fixed const & toAssign)
 	return (*this);
 }
 
-std::ostream& operator<<(std::ostream & os, Fixed const & fixed)
+std::ostream & operator << (std::ostream & os, Fixed const & fixed)
 {
 	os << fixed.toDouble();
 	return (os);
 }
 
-bool Fixed::operator>(Fixed const & rhs) const
+bool Fixed::operator > (Fixed const & rhs) const
 {
 	return (_value > rhs._value);
 }
 
-bool Fixed::operator<(Fixed const & rhs) const
+bool Fixed::operator < (Fixed const & rhs) const
 {
 	return (_value < rhs._value);
 }
 
-bool Fixed::operator>=(Fixed const & rhs) const
+bool Fixed::operator >= (Fixed const & rhs) const
 {
 	return (_value >= rhs._value);
 }
 
-bool Fixed::operator<=(Fixed const & rhs) const
+bool Fixed::operator <= (Fixed const & rhs) const
 {
 	return (_value <= rhs._value);
 }
 
-bool Fixed::operator==(Fixed const & rhs) const
+bool Fixed::operator == (Fixed const & rhs) const
 {
 	return (_value == rhs._value);
 }
 
-bool Fixed::operator!=(Fixed const & rhs) const
+bool Fixed::operator != (Fixed const & rhs) const
 {
 	return (_value != rhs._value);
 }
 
-Fixed Fixed::operator+(Fixed const & rhs) const
+Fixed Fixed::operator + (Fixed const & rhs) const
 {
 	Fixed result;
 	result._value = _value + rhs._value;
 	return (result);
 }
 
-Fixed Fixed::operator-(Fixed const & rhs) const
+Fixed Fixed::operator - (Fixed const & rhs) const
 {
 	Fixed result;
 	result._value = _value - rhs._value;
 	return (result);
 }
 
-Fixed Fixed::operator*(Fixed const & rhs) const
+Fixed Fixed::operator * (Fixed const & rhs) const
 {
 	return (Fixed((float)(toDouble() * rhs.toDouble())));
 }
 
-Fixed Fixed::operator/(Fixed const & rhs) const
+Fixed Fixed::operator / (Fixed const & rhs) const
 {
 	if (rhs._value == 0)
 	{
@@ -119,26 +119,26 @@ Fixed Fixed::operator/(Fixed const & rhs) const
 	return (Fixed((float)(toDouble() / rhs.toDouble())));
 }
 
-Fixed& Fixed::operator++(void)
+Fixed& Fixed::operator ++ (void)
 {
 	_value++;
 	return (*this);
 }
 
-Fixed& Fixed::operator--(void)
+Fixed& Fixed::operator -- (void)
 {
 	_value--;
 	return (*this);
 }
 
-Fixed Fixed::operator++(int)
+Fixed Fixed::operator ++ (int)
 {
 	Fixed old = *this;
 	operator++();
 	return (old);
 }
 
-Fixed Fixed::operator--(int)
+Fixed Fixed::operator-- (int)
 {
 	Fixed old = *this;
 	operator--();

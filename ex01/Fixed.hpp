@@ -6,7 +6,7 @@
 /*   By: svogrig <svogrig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 16:41:46 by svogrig           #+#    #+#             */
-/*   Updated: 2025/02/21 14:06:24 by svogrig          ###   ########.fr       */
+/*   Updated: 2025/02/23 00:51:10 by svogrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ class Fixed
 		Fixed(Fixed const & toCopy);
 		Fixed(int const intValue);
 		Fixed(float const floatValue);
-		Fixed& operator=(Fixed const & toAssign);
+		Fixed & operator = (Fixed const & toAssign);
 		~Fixed(void);
 
 		int		getRawBits(void) const;

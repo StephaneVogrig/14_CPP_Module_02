@@ -6,7 +6,7 @@
 /*   By: svogrig <svogrig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 16:41:46 by svogrig           #+#    #+#             */
-/*   Updated: 2025/02/22 20:22:31 by svogrig          ###   ########.fr       */
+/*   Updated: 2025/02/22 20:52:30 by svogrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,25 +49,25 @@ class Fixed
 		Fixed(Fixed const & toCopy);
 		Fixed(int const intValue);
 		Fixed(float const floatValue);
-		Fixed& operator=(Fixed const & toAssign);
+		Fixed & operator = (Fixed const & toAssign);
 		~Fixed(void);
 
-		bool operator>(Fixed const & rhs) const;
-		bool operator<(Fixed const & rhs) const;
-		bool operator>=(Fixed const & rhs) const;
-		bool operator<=(Fixed const & rhs) const;
-		bool operator==(Fixed const & rhs) const;
-		bool operator!=(Fixed const & rhs) const;
+		bool operator >  (Fixed const & rhs) const;
+		bool operator <  (Fixed const & rhs) const;
+		bool operator >= (Fixed const & rhs) const;
+		bool operator <= (Fixed const & rhs) const;
+		bool operator == (Fixed const & rhs) const;
+		bool operator != (Fixed const & rhs) const;
 
-		Fixed operator+(Fixed const & rhs) const;
-		Fixed operator-(Fixed const & rhs) const;
-		Fixed operator*(Fixed const & rhs) const;
-		Fixed operator/(Fixed const & rhs) const;
+		Fixed operator + (Fixed const & rhs) const;
+		Fixed operator - (Fixed const & rhs) const;
+		Fixed operator * (Fixed const & rhs) const;
+		Fixed operator / (Fixed const & rhs) const;
 
-		Fixed& operator++(void);
-		Fixed& operator--(void);
-		Fixed operator++(int);
-		Fixed operator--(int);
+		Fixed &	operator ++ (void);
+		Fixed &	operator -- (void);
+		Fixed	operator ++ (int);
+		Fixed	operator -- (int);
 		
 		static Fixed &			min(Fixed & a, Fixed & b);
 		static Fixed const &	min(Fixed const & a, Fixed const & b);
