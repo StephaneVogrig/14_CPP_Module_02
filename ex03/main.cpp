@@ -6,12 +6,14 @@
 /*   By: svogrig <svogrig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 20:46:03 by svogrig           #+#    #+#             */
-/*   Updated: 2025/02/23 13:22:24 by svogrig          ###   ########.fr       */
+/*   Updated: 2025/02/23 15:04:09 by svogrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "Point.hpp"
+
+bool bsp( Point const a, Point const b, Point const c, Point const point);
 
 int main( void )
 {

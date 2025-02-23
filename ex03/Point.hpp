@@ -6,7 +6,7 @@
 /*   By: svogrig <svogrig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 20:43:35 by svogrig           #+#    #+#             */
-/*   Updated: 2025/02/23 00:04:26 by svogrig          ###   ########.fr       */
+/*   Updated: 2025/02/23 15:04:01 by svogrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,5 @@ class Point
 		Fixed const _y;
 
 };
-
-bool bsp( Point const a, Point const b, Point const c, Point const point);
 
 #endif
