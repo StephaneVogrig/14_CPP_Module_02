@@ -6,7 +6,7 @@
 /*   By: svogrig <svogrig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 16:41:33 by svogrig           #+#    #+#             */
-/*   Updated: 2025/02/23 01:18:29 by svogrig          ###   ########.fr       */
+/*   Updated: 2025/02/23 14:06:51 by svogrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,13 @@ Fixed::Fixed(Fixed const & other)
 	*this = other;
 }
 
+/* destructor ----------------------------------------------------------------*/
+
+Fixed::~Fixed(void)
+{
+	std::cout << BLUE "Destructor called" RESET << std::endl;
+}
+
 /* operator ------------------------------------------------------------------*/
 
 Fixed & Fixed::operator = (Fixed const & toAssign)
@@ -35,13 +42,6 @@ Fixed & Fixed::operator = (Fixed const & toAssign)
 	return (*this);
 }
 
-/* destructor ----------------------------------------------------------------*/
-
-Fixed::~Fixed(void)
-{
-	std::cout << BLUE "Destructor called" RESET << std::endl;
-}
-
 /* getter setter -------------------------------------------------------------*/
 
 int Fixed::getRawBits(void) const
@@ -50,8 +50,8 @@ int Fixed::getRawBits(void) const
 	return (this->_value);
 }
 
-void Fixed::setRawBits(int const intValue)
+void Fixed::setRawBits(int const raw)
 {
 	std::cout << GREY "setRawBits member function called" RESET << std::endl;
-	this->_value = intValue;
+	this->_value = raw;
 }

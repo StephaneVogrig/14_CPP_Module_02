@@ -6,7 +6,7 @@
 /*   By: svogrig <svogrig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 16:41:33 by svogrig           #+#    #+#             */
-/*   Updated: 2025/02/23 01:27:30 by svogrig          ###   ########.fr       */
+/*   Updated: 2025/02/23 14:09:03 by svogrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,13 @@ Fixed::Fixed(float const floatValue)
 {
 	std::cout << CYAN "Float constructor called" RESET << std::endl;
 	_value = (int)roundf(floatValue * (1 << _precisionInBit));
+}
+
+/* destructor ----------------------------------------------------------------*/
+
+Fixed::~Fixed(void)
+{
+	std::cout << BLUE "Destructor called" RESET << std::endl;
 }
 
 /* operator ------------------------------------------------------------------*/
@@ -167,13 +174,6 @@ Fixed const & Fixed::max(Fixed const & a, Fixed const & b)
 	return (a._value > b._value ? a : b);
 }
 
-/* destructor ----------------------------------------------------------------*/
-
-Fixed::~Fixed(void)
-{
-	std::cout << BLUE "Destructor called" RESET << std::endl;
-}
-
 /* getter setter -------------------------------------------------------------*/
 
 int Fixed::getRawBits(void) const
@@ -188,10 +188,10 @@ int		Fixed::getPrecisionBits(void)
 	return (_precisionInBit);
 }
 
-void Fixed::setRawBits(int const intValue)
+void Fixed::setRawBits(int const raw)
 {
 	std::cout << GREY "setRawBits member functio called" RESET << std::endl;
-	_value = intValue;
+	_value = raw;
 }
 
 /* convert -------------------------------------------------------------------*/

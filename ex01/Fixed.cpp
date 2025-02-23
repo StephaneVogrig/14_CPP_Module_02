@@ -6,7 +6,7 @@
 /*   By: svogrig <svogrig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 16:41:33 by svogrig           #+#    #+#             */
-/*   Updated: 2025/02/23 00:51:50 by svogrig          ###   ########.fr       */
+/*   Updated: 2025/02/23 14:09:21 by svogrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,12 @@ Fixed::Fixed(float const floatValue)
 	this->_value = (int)roundf(floatValue * (1 << _precisionInBit));
 }
 
+/* destructor ----------------------------------------------------------------*/
 
+Fixed::~Fixed(void)
+{
+	std::cout << BLUE "Destructor called" RESET << std::endl;
+}
 
 /* operator ------------------------------------------------------------------*/
 
@@ -55,17 +60,6 @@ std::ostream & operator << (std::ostream & os, Fixed const & obj)
 	return (os);
 }
 
-
-
-/* destructor ----------------------------------------------------------------*/
-
-Fixed::~Fixed(void)
-{
-	std::cout << BLUE "Destructor called" RESET << std::endl;
-}
-
-
-
 /* getter setter -------------------------------------------------------------*/
 
 int Fixed::getRawBits(void) const
@@ -74,13 +68,11 @@ int Fixed::getRawBits(void) const
 	return (this->_value);
 }
 
-void Fixed::setRawBits(int const intValue)
+void Fixed::setRawBits(int const raw)
 {
 	std::cout << GREY "setRawBits member functio called" RESET << std::endl;
-	this->_value = intValue;
+	this->_value = raw;
 }
-
-
 
 /* convert -------------------------------------------------------------------*/
 
