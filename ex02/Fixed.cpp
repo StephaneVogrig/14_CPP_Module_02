@@ -6,7 +6,7 @@
 /*   By: svogrig <svogrig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 16:41:33 by svogrig           #+#    #+#             */
-/*   Updated: 2025/02/23 14:09:03 by svogrig          ###   ########.fr       */
+/*   Updated: 2025/02/23 16:27:41 by svogrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,8 +51,9 @@ Fixed::~Fixed(void)
 Fixed & Fixed::operator = (Fixed const & toAssign)
 {
 	std::cout << PURPLE "Copy assignment operator called" RESET << std::endl;
-	if (this != &toAssign)
-		_value = toAssign._value;
+	if (this == &toAssign)
+		return (*this);
+	_value = toAssign._value;
 	return (*this);
 }
 

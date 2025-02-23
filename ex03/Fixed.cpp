@@ -6,7 +6,7 @@
 /*   By: svogrig <svogrig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 16:41:33 by svogrig           #+#    #+#             */
-/*   Updated: 2025/02/23 14:12:05 by svogrig          ###   ########.fr       */
+/*   Updated: 2025/02/23 16:31:36 by svogrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,9 @@ Fixed::~Fixed(void)
 
 Fixed & Fixed::operator = (Fixed const & toAssign)
 {
-	if (this != &toAssign)
-		_value = toAssign._value;
+	if (this == &toAssign)
+		return (*this);
+	_value = toAssign._value;
 	return (*this);
 }
 
