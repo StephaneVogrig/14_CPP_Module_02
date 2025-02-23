@@ -6,7 +6,7 @@
 /*   By: svogrig <svogrig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 16:41:46 by svogrig           #+#    #+#             */
-/*   Updated: 2025/02/22 20:52:30 by svogrig          ###   ########.fr       */
+/*   Updated: 2025/02/23 01:29:43 by svogrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@
 class Fixed
 {
 	public:
-	
+
 		Fixed(void);
 		Fixed(Fixed const & toCopy);
 		Fixed(int const intValue);
@@ -68,7 +68,7 @@ class Fixed
 		Fixed &	operator -- (void);
 		Fixed	operator ++ (int);
 		Fixed	operator -- (int);
-		
+
 		static Fixed &			min(Fixed & a, Fixed & b);
 		static Fixed const &	min(Fixed const & a, Fixed const & b);
 		static Fixed &			max(Fixed & a, Fixed & b);
@@ -77,7 +77,7 @@ class Fixed
 		int			getRawBits(void) const;
 		static int	getPrecisionBits(void);
 		void		setRawBits(int const intValue);
-		
+
 		float	toFloat(void) const;
 		double	toDouble(void) const;
 		int		toInt(void) const;

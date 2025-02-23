@@ -6,7 +6,7 @@
 /*   By: svogrig <svogrig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 16:41:33 by svogrig           #+#    #+#             */
-/*   Updated: 2025/02/23 00:50:55 by svogrig          ###   ########.fr       */
+/*   Updated: 2025/02/23 01:27:30 by svogrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -186,7 +186,6 @@ int		Fixed::getPrecisionBits(void)
 {
 	std::cout << GREEN "getPrecisionBits member functio called" RESET << std::endl;
 	return (_precisionInBit);
-	
 }
 
 void Fixed::setRawBits(int const intValue)
