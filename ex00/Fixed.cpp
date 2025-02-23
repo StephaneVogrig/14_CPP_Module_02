@@ -6,7 +6,7 @@
 /*   By: svogrig <svogrig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 16:41:33 by svogrig           #+#    #+#             */
-/*   Updated: 2025/02/23 14:06:51 by svogrig          ###   ########.fr       */
+/*   Updated: 2025/02/23 16:03:12 by svogrig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ Fixed::Fixed(void) : _value(0)
 	std::cout << CYAN "Default constructor called" RESET << std::endl;
 }
 
-Fixed::Fixed(Fixed const & other)
+Fixed::Fixed(Fixed const & toCopy)
 {
 	std::cout << CYAN "Copy constructor called" RESET << std::endl;
-	*this = other;
+	*this = toCopy;
 }
 
 /* destructor ----------------------------------------------------------------*/
